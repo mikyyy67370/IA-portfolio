@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blockGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#7E22CE" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Lignes de connexion -->
+  <g stroke="#4F46E5" stroke-width="1" opacity="0.3">
+    <line x1="100" y1="100" x2="200" y2="50" />
+    <line x1="100" y1="100" x2="200" y2="150" />
+    <line x1="100" y1="100" x2="50" y2="200" />
+    <line x1="200" y1="50" x2="300" y2="100" />
+    <line x1="200" y1="150" x2="300" y2="100" />
+    <line x1="200" y1="150" x2="200" y2="250" />
+    <line x1="300" y1="100" x2="350" y2="200" />
+    <line x1="50" y1="200" x2="150" y2="250" />
+    <line x1="150" y1="250" x2="200" y2="250" />
+    <line x1="200" y1="250" x2="300" y2="300" />
+    <line x1="300" y1="300" x2="350" y2="200" />
+    <line x1="150" y1="250" x2="100" y2="350" />
+    <line x1="100" y1="350" x2="200" y2="350" />
+    <line x1="200" y1="350" x2="300" y2="300" />
+  </g>
+  
+  <!-- Blocs avec symboles de crypto -->
+  <g>
+    <!-- Bloc 1 - Bitcoin (BTC) -->
+    <rect x="80" y="80" width="40" height="40" rx="5" ry="5" fill="url(#blockGradient)" stroke="#4F46E5" stroke-width="1" />
+    <g transform="translate(100, 100) scale(0.018)">
+      <circle cx="0" cy="0" r="1000" fill="#F7931A" />
+      <path d="M 963,664 C 957,493 848,414 704,388 L 704,258 L 627,258 L 627,383 C 604,383 580,384 556,385 L 556,258 L 479,258 L 479,388 C 460,389 442,390 424,390 L 424,390 L 307,390 L 307,471 C 307,471 363,470 361,471 C 417,471 432,501 437,529 L 437,721 L 437,914 C 435,933 425,962 384,962 C 386,962 330,962 330,962 L 307,1051 L 418,1051 C 439,1051 460,1052 480,1052 L 480,1183 L 557,1183 L 557,1054 C 581,1055 604,1056 627,1056 L 627,1183 L 704,1183 L 704,1052 C 897,1040 1035,972 1048,787 C 1058,638 989,565 876,533 C 953,494 1004,427 1010,318 L 963,664 Z M 859,774 C 859,922 625,888 556,888 L 556,660 C 625,660 859,621 859,774 Z M 810,339 C 810,475 617,446 557,446 L 557,232 C 617,232 810,198 810,339 Z" fill="white" />
+    </g>
+    
+    <!-- Bloc 2 - Ethereum (ETH) -->
+    <rect x="180" y="30" width="40" height="40" rx="5" ry="5" fill="url(#blockGradient)" stroke="#4F46E5" stroke-width="1" />
+    <g transform="translate(200, 50) scale(0.018)">
+      <circle cx="0" cy="0" r="1000" fill="#627EEA" />
+      <path d="M 999,763 L 500,1064 L 1,763 L 500,0 Z" fill="white" fill-opacity="0.6" />
+      <path d="M 500,0 L 500,1064 L 999,763 Z" fill="white" />
+      <path d="M 999,850 L 500,1152 L 1,850 L 500,1444 Z" fill="white" fill-opacity="0.6" />
+      <path d="M 500,1444 L 500,1152 L 999,850 Z" fill="white" />
+      <path d="M 500,574 L 1,763 L 500,1064 L 999,763 Z" fill="white" fill-opacity="0.2" />
+    </g>
+    
+    <!-- Bloc 3 - Binance Coin (BNB) -->
+    <rect x="180" y="130" width="40" height="40" rx="5" ry="5" fill="url(#blockGradient)" stroke="#4F46E5" stroke-width="1" />
+    <g transform="translate(200, 150) scale(0.018)">
+      <circle cx="0" cy="0" r="1000" fill="#F3BA2F" />
+      <path d="M 500,220 L 281,439 L 158,316 L 500,-26 L 842,316 L 719,439 Z" fill="white" />
+      <path d="M 500,780 L 719,561 L 842,684 L 500,1026 L 158,684 L 281,561 Z" fill="white" />
+      <path d="M 158,500 L 281,377 L 404,500 L 281,623 Z" fill="white" />
+      <path d="M 842,500 L 719,377 L 596,500 L 719,623 Z" fill="white" />
+      <path d="M 404,500 L 500,404 L 596,500 L 500,596 Z" fill="white" />
+    </g>
+    
+    <!-- Bloc 4 - Ripple (XRP) -->
+    <rect x="280" y="80" width="40" height="40" rx="5" ry="5" fill="url(#blockGradient)" stroke="#4F46E5" stroke-width="1" />
+    <g transform="translate(300, 100) scale(0.018)">
+      <circle cx="0" cy="0" r="1000" fill="#23292F" />
+      <path d="M 500,200 C 600,200 700,250 750,350 L 950,200 C 850,50 675,-25 500,-25 C 225,-25 0,200 0,500 C 0,800 225,1025 500,1025 C 675,1025 850,950 950,800 L 750,650 C 700,750 600,800 500,800 C 350,800 225,675 225,500 C 225,325 350,200 500,200 Z" fill="white" />
+    </g>
+    
+    <!-- Bloc 5 - Cardano (ADA) -->
+    <rect x="30" y="180" width="40" height="40" rx="5" ry="5" fill="url(#blockGradient)" stroke="#4F46E5" stroke-width="1" />
+    <g transform="translate(50, 200) scale(0.018)">
+      <circle cx="0" cy="0" r="1000" fill="#0033AD" />
+      <path d="M 375,250 C 375,305 330,350 275,350 C 220,350 175,305 175,250 C 175,195 220,150 275,150 C 330,150 375,195 375,250 Z M 825,250 C 825,305 780,350 725,350 C 670,350 625,305 625,250 C 625,195 670,150 725,150 C 780,150 825,195 825,250 Z M 600,500 C 600,555 555,600 500,600 C 445,600 400,555 400,500 C 400,445 445,400 500,400 C 555,400 600,445 600,500 Z M 375,750 C 375,805 330,850 275,850 C 220,850 175,805 175,750 C 175,695 220,650 275,650 C 330,650 375,695 375,750 Z M 825,750 C 825,805 780,850 725,850 C 670,850 625,805 625,750 C 625,695 670,650 725,650 C 780,650 825,695 825,750 Z" fill="white" />
+      <path d="M 275,350 L 725,350 M 275,650 L 725,650 M 275,350 L 500,500 M 725,350 L 500,500 M 275,650 L 500,500 M 725,650 L 500,500" stroke="white" stroke-width="50" fill="none" />
+    </g>
+    
+    <!-- Bloc 6 - Solana (SOL) -->
+    <rect x="130" y="230" width="40" height="40" rx="5" ry="5" fill="url(#blockGradient)" stroke="#4F46E5" stroke-width="1" />
+    <g transform="translate(150, 250) scale(0.018)">
+      <circle cx="0" cy="0" r="1000" fill="#14F195" />
+      <path d="M 200,300 L 650,300 C 675,300 700,315 712.5,337.5 L 800,500 C 812.5,522.5 812.5,552.5 800,575 L 712.5,737.5 C 700,760 675,775 650,775 L 200,775 C 175,775 150,760 137.5,737.5 L 50,575 C 37.5,552.5 37.5,522.5 50,500 L 137.5,337.5 C 150,315 175,300 200,300 Z" fill="white" />
+      <path d="M 200,400 L 650,400 L 700,500 L 650,600 L 200,600 L 150,500 Z" fill="#14F195" />
+    </g>
+    
+    <!-- Bloc 7 - Polkadot (DOT) -->
+    <rect x="180" y="230" width="40" height="40" rx="5" ry="5" fill="url(#blockGradient)" stroke="#4F46E5" stroke-width="1" />
+    <g transform="translate(200, 250) scale(0.018)">
+      <circle cx="0" cy="0" r="1000" fill="#E6007A" />
+      <circle cx="0" cy="-400" r="200" fill="white" />
+      <circle cx="346" cy="-200" r="200" fill="white" />
+      <circle cx="346" cy="200" r="200" fill="white" />
+      <circle cx="0" cy="400" r="200" fill="white" />
+      <circle cx="-346" cy="200" r="200" fill="white" />
+      <circle cx="-346" cy="-200" r="200" fill="white" />
+    </g>
+    
+    <!-- Bloc 8 - Chainlink (LINK) -->
+    <rect x="280" y="280" width="40" height="40" rx="5" ry="5" fill="url(#blockGradient)" stroke="#4F46E5" stroke-width="1" />
+    <g transform="translate(300, 300) scale(0.018)">
+      <circle cx="0" cy="0" r="1000" fill="#2A5ADA" />
+      <path d="M 500,100 L 900,500 L 500,900 L 100,500 Z" fill="white" />
+      <path d="M 500,250 L 750,500 L 500,750 L 250,500 Z" fill="#2A5ADA" />
+    </g>
+    
+    <!-- Bloc 9 - Uniswap (UNI) -->
+    <rect x="330" y="180" width="40" height="40" rx="5" ry="5" fill="url(#blockGradient)" stroke="#4F46E5" stroke-width="1" />
+    <g transform="translate(350, 200) scale(0.018)">
+      <circle cx="0" cy="0" r="1000" fill="#FF007A" />
+      <path d="M 600,400 C 650,400 700,450 700,500 C 700,550 650,600 600,600 C 550,600 500,550 500,500 C 500,450 550,400 600,400 Z M 400,400 C 450,400 500,450 500,500 C 500,550 450,600 400,600 C 350,600 300,550 300,500 C 300,450 350,400 400,400 Z M 500,700 C 600,700 700,750 700,800 C 700,850 600,900 500,900 C 400,900 300,850 300,800 C 300,750 400,700 500,700 Z" fill="white" />
+    </g>
+    
+    <!-- Bloc 10 - Aave (AAVE) -->
+    <rect x="80" y="330" width="40" height="40" rx="5" ry="5" fill="url(#blockGradient)" stroke="#4F46E5" stroke-width="1" />
+    <g transform="translate(100, 350) scale(0.018)">
+      <circle cx="0" cy="0" r="1000" fill="#B6509E" />
+      <path d="M 500,200 C 700,200 850,350 850,550 C 850,750 700,900 500,900 C 300,900 150,750 150,550 C 150,350 300,200 500,200 Z M 500,300 C 350,300 250,400 250,550 C 250,700 350,800 500,800 C 650,800 750,700 750,550 C 750,400 650,300 500,300 Z" fill="white" />
+      <circle cx="350" cy="450" r="75" fill="white" />
+      <circle cx="650" cy="450" r="75" fill="white" />
+    </g>
+    
+    <!-- Bloc 11 - Compound (COMP) -->
+    <rect x="180" y="330" width="40" height="40" rx="5" ry="5" fill="url(#blockGradient)" stroke="#4F46E5" stroke-width="1" />
+    <g transform="translate(200, 350) scale(0.018)">
+      <circle cx="0" cy="0" r="1000" fill="#00D395" />
+      <path d="M 300,300 L 700,300 L 700,700 L 300,700 Z" fill="white" />
+      <path d="M 400,400 L 600,400 L 600,600 L 400,600 Z" fill="#00D395" />
+    </g>
+  </g>
+  
+  <!-- Points lumineux -->
+  <g filter="url(#glow)">
+    <circle cx="100" cy="100" r="2" fill="#4F46E5" opacity="0.8" />
+    <circle cx="200" cy="50" r="2" fill="#4F46E5" opacity="0.8" />
+    <circle cx="200" cy="150" r="2" fill="#4F46E5" opacity="0.8" />
+    <circle cx="300" cy="100" r="2" fill="#4F46E5" opacity="0.8" />
+    <circle cx="50" cy="200" r="2" fill="#4F46E5" opacity="0.8" />
+    <circle cx="150" cy="250" r="2" fill="#4F46E5" opacity="0.8" />
+    <circle cx="200" cy="250" r="2" fill="#4F46E5" opacity="0.8" />
+    <circle cx="300" cy="300" r="2" fill="#4F46E5" opacity="0.8" />
+    <circle cx="350" cy="200" r="2" fill="#4F46E5" opacity="0.8" />
+    <circle cx="100" cy="350" r="2" fill="#4F46E5" opacity="0.8" />
+    <circle cx="200" cy="350" r="2" fill="#4F46E5" opacity="0.8" />
+  </g>
+</svg>

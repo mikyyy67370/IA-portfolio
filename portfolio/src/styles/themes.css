@@ -1,0 +1,92 @@
+/* Thème sombre (par défaut) */
+:root, .dark-theme {
+  /* Couleurs principales */
+  --bg-primary: #0B0F1A;
+  --bg-secondary: #121827;
+  --bg-tertiary: #1A2236;
+  --text-primary: #FFFFFF;
+  --text-secondary: #B8C0D9;
+  --text-muted: #8892B0;
+  
+  /* Couleurs d'accent */
+  --tech-blue: #00BFFF;
+  --neon-green: #39FF14;
+  --purple: #9D4EDD;
+  
+  /* Couleurs d'interface */
+  --card-bg: rgba(18, 24, 39, 0.8);
+  --card-border: rgba(30, 41, 59, 0.5);
+  --glass-effect: rgba(10, 15, 30, 0.7);
+  --input-bg: rgba(15, 23, 42, 0.7);
+  --input-border: rgba(51, 65, 85, 0.5);
+  
+  /* Ombres */
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 25px rgba(0, 0, 0, 0.5);
+  
+  /* Effets */
+  --glow-blue: 0 0 15px rgba(0, 191, 255, 0.5);
+  --glow-green: 0 0 15px rgba(57, 255, 20, 0.5);
+  --glow-purple: 0 0 15px rgba(157, 78, 221, 0.5);
+}
+
+/* Thème clair (version sombre) */
+.light-theme {
+  /* Couleurs principales - version plus sombre et cohérente */
+  --bg-primary: #121927;
+  --bg-secondary: #1A2236;
+  --bg-tertiary: #232D42;
+  --text-primary: #E2E8F0;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  
+  /* Couleurs d'accent légèrement modifiées pour plus de contraste */
+  --tech-blue: #38BDF8; /* Plus clair */
+  --neon-green: #4ADE80; /* Plus doux */
+  --purple: #A78BFA; /* Plus clair */
+  
+  /* Couleurs d'interface */
+  --card-bg: rgba(30, 41, 59, 0.8);
+  --card-border: rgba(71, 85, 105, 0.5);
+  --glass-effect: rgba(30, 41, 59, 0.7);
+  --input-bg: rgba(30, 41, 59, 0.7);
+  --input-border: rgba(71, 85, 105, 0.5);
+  
+  /* Ombres */
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 20px 25px rgba(0, 0, 0, 0.25);
+  
+  /* Effets */
+  --glow-blue: 0 0 15px rgba(56, 189, 248, 0.4);
+  --glow-green: 0 0 15px rgba(74, 222, 128, 0.4);
+  --glow-purple: 0 0 15px rgba(167, 139, 250, 0.4);
+}
+
+/* Classes utilitaires basées sur les variables de thème */
+.bg-primary { background-color: var(--bg-primary); }
+.bg-secondary { background-color: var(--bg-secondary); }
+.bg-tertiary { background-color: var(--bg-tertiary); }
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+
+/* Effets de verre */
+.glass-effect {
+  background-color: var(--glass-effect);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Transitions pour les changements de thème */
+body, 
+.card, 
+.button, 
+.input, 
+.navbar,
+.section,
+.footer,
+.glass-effect {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}

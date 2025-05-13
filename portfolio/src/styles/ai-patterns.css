@@ -1,0 +1,132 @@
+/* Motifs d'arrière-plan liés à l'IA */
+
+/* Motif de réseau neuronal */
+.neural-network-bg {
+  background-image: radial-gradient(circle at 25px 25px, var(--text-muted) 2px, transparent 0),
+                    radial-gradient(circle at 75px 75px, var(--text-muted) 2px, transparent 0);
+  background-size: 100px 100px;
+  position: relative;
+}
+
+.neural-network-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(45deg, var(--text-muted) 10%, transparent 10%, transparent 50%, var(--text-muted) 50%, var(--text-muted) 60%, transparent 60%, transparent);
+  background-size: 30px 30px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* Motif de circuit imprimé */
+.circuit-bg {
+  background-color: transparent;
+  background-image: 
+    linear-gradient(to right, var(--text-muted) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--text-muted) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: center;
+  position: relative;
+  opacity: 0.1;
+}
+
+.circuit-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 10px 10px, var(--text-muted) 2px, transparent 0),
+    radial-gradient(circle at 30px 30px, var(--text-muted) 1px, transparent 0);
+  background-size: 40px 40px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Motif de flux de données */
+.data-flow-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.data-flow-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, transparent 0%, transparent 25%, var(--text-muted) 25%, var(--text-muted) 26%, transparent 26%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, transparent 25%, var(--text-muted) 25%, var(--text-muted) 26%, transparent 26%, transparent 100%);
+  background-size: 80px 80px;
+  opacity: 0.07;
+  animation: dataFlow 15s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes dataFlow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 80px 80px;
+  }
+}
+
+/* Motif de code binaire */
+.binary-code-bg {
+  position: relative;
+}
+
+.binary-code-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18h3v4h-3v-4zm5 0h3v4h-3v-4zm23 0h4v4h-4v-4zM11 27h3v4h-3v-4zm5 0h3v4h-3v-4zm23 0h4v4h-4v-4zM11 36h3v4h-3v-4zm5 0h3v4h-3v-4zm23 0h4v4h-4v-4zM11 45h3v4h-3v-4zm5 0h3v4h-3v-4zm23 0h4v4h-4v-4zM11 54h3v4h-3v-4zm5 0h3v4h-3v-4zm23 0h4v4h-4v-4zM11 63h3v4h-3v-4zm5 0h3v4h-3v-4zm23 0h4v4h-4v-4zM11 72h3v4h-3v-4zm5 0h3v4h-3v-4zm23 0h4v4h-4v-4zM11 81h3v4h-3v-4zm5 0h3v4h-3v-4zm23 0h4v4h-4v-4z' fill='rgba(100, 116, 139, 0.3)' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* Particules flottantes */
+.ai-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ai-particle {
+  position: absolute;
+  background: var(--text-muted);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: float-particle 15s infinite ease-in-out;
+}
+
+@keyframes float-particle {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-30px) translateX(15px);
+  }
+  50% {
+    transform: translateY(-15px) translateX(30px);
+  }
+  75% {
+    transform: translateY(-25px) translateX(-15px);
+  }
+}
