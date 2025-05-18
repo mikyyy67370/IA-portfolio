@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Head from 'next/head';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
@@ -182,329 +182,224 @@ const FlashLoanBotProject = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }} // Durée réduite pour une transition plus rapide
-      {...optimizedAnimationProps} // Ajout des optimisations pour l'accélération matérielle
+      transition={{ duration: 0.5 }}
+      {...optimizedAnimationProps}
     >
       <Head>
         <title>{projectData.title} | Portfolio</title>
         <meta name="description" content={projectData.description} />
       </Head>
 
-      {/* Hero du projet - Design amélioré avec tokens 3D animés */}
-      <section className="relative min-h-[80vh] md:min-h-[70vh] flex items-center overflow-hidden">
-        {/* Arrière-plan avec gradient animé - optimisé */}
-        <div 
-          className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-dark-blue z-0"
-          style={{ transform: 'translateZ(0)', willChange: 'auto' }} // Optimisation GPU pour l'arrière-plan
-        >
+      {/* Hero Section */}
+      <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+        {/* Arrière-plan animé */}
+        <div className="absolute inset-0 bg-gradient-to-br from-dark-blue via-space-gray to-purple-900/80 z-0">
+          {/* Effet de vagues animées */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-0 left-0 right-0 h-[40vh] bg-gradient-to-b from-blue-500/20 to-transparent transform -skew-y-6"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-[40vh] bg-gradient-to-t from-purple-500/20 to-transparent transform skew-y-6"></div>
+          </div>
+          
+          {/* Effet de grille cybernétique */}
+          <div className="absolute inset-0 bg-[url('/images/grid.svg')] bg-center opacity-10 animate-pulse-very-slow"></div>
+          
+          {/* Effet de lueur radiale */}
+          <div className="absolute inset-0 bg-gradient-radial from-blue-500/10 via-transparent to-transparent animate-pulse-very-slow"></div>
         </div>
         
-        {/* Effet de lueur amélioré - optimisé avec taille réduite du flou */}
-        <div 
-          className="absolute top-0 left-1/4 w-1/2 h-1/2 bg-blue-600/30 blur-[80px] rounded-full"
-          style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }} // Optimisation GPU pour les effets de flou
-        ></div>
-        <div 
-          className="absolute bottom-0 right-1/4 w-1/2 h-1/2 bg-purple-600/30 blur-[80px] rounded-full"
-          style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }} // Optimisation GPU pour les effets de flou
-        ></div>
+        {/* Bouton retour avec effet de survol amélioré */}
+        <div className="absolute top-4 sm:top-6 left-4 sm:left-6 z-50">
+          <Link href="/#projects">
+            <a className="group bg-white/10 backdrop-blur-md text-white font-medium px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg hover:bg-white/20 transition-all duration-300 flex items-center gap-1.5 sm:gap-2 border border-white/10 hover:border-neon-green/50 hover:shadow-glow-sm text-xs sm:text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 sm:h-4 sm:w-4 group-hover:text-neon-green transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              <span className="relative overflow-hidden">
+                <span className="relative z-10 group-hover:text-neon-green transition-colors duration-300">Retour aux projets</span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-neon-green group-hover:w-full transition-all duration-300"></span>
+              </span>
+            </a>
+          </Link>
+        </div>
         
-        {/* Tokens 3D animés */}
-        <div className="absolute inset-0 z-10 pointer-events-none">
-          {/* Token ETH - Animation optimisée avec le nouveau système */}
-          <motion.div 
-            className="absolute top-1/4 left-1/5"
-            initial={{ y: 0, scale: 1 }}
-            animate={tokenAnimation}
-            {...optimizedAnimationProps}
-          >
-            <div className="w-16 h-16 relative">
-              <div className="absolute inset-0 bg-blue-500/30 backdrop-blur-md rounded-full shadow-glow-blue-sm transform-gpu" />
-              <div className="absolute inset-[15%] bg-blue-400/40 backdrop-blur-md rounded-full shadow-glow-blue-sm transform-gpu" />
-              <div className="absolute inset-[30%] bg-blue-300/50 backdrop-blur-md rounded-full shadow-glow-blue-sm transform-gpu" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-white font-bold text-xl">ETH</span>
-              </div>
-            </div>
-          </motion.div>
+        {/* Éléments décoratifs améliorés */}
+        <div className="absolute top-10 left-10 w-80 h-80 rounded-full bg-gradient-to-r from-purple-500/10 to-blue-500/10 blur-3xl animate-pulse-slow opacity-70"></div>
+        <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-gradient-to-r from-neon-green/5 to-blue-500/5 blur-3xl animate-pulse-slow opacity-70" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-gradient-to-r from-blue-500/5 to-purple-500/5 blur-3xl animate-pulse-slow opacity-50" style={{animationDelay: '1.5s'}}></div>
+        
+        {/* Réseau de connexions blockchain */}
+        <div className="absolute inset-0 z-10 overflow-hidden opacity-20">
+          {/* Nœuds */}
+          <div className="absolute top-[15%] left-[20%] w-2 h-2 bg-neon-green rounded-full shadow-glow-green-sm animate-pulse-slow"></div>
+          <div className="absolute top-[65%] left-[15%] w-3 h-3 bg-blue-400 rounded-full shadow-glow-blue-sm animate-pulse-slow" style={{animationDelay: '0.7s'}}></div>
+          <div className="absolute top-[35%] left-[80%] w-2 h-2 bg-purple-400 rounded-full shadow-glow-purple-sm animate-pulse-slow" style={{animationDelay: '1.3s'}}></div>
+          <div className="absolute top-[75%] left-[75%] w-2 h-2 bg-neon-green rounded-full shadow-glow-green-sm animate-pulse-slow" style={{animationDelay: '0.9s'}}></div>
+          <div className="absolute top-[25%] left-[50%] w-3 h-3 bg-blue-400 rounded-full shadow-glow-blue-sm animate-pulse-slow" style={{animationDelay: '1.7s'}}></div>
+          <div className="absolute top-[50%] left-[30%] w-2 h-2 bg-purple-400 rounded-full shadow-glow-purple-sm animate-pulse-slow" style={{animationDelay: '0.5s'}}></div>
+          <div className="absolute top-[85%] left-[40%] w-2 h-2 bg-neon-green rounded-full shadow-glow-green-sm animate-pulse-slow" style={{animationDelay: '1.1s'}}></div>
           
-          {/* Token BTC - Animation optimisée avec le nouveau système */}
-          <motion.div 
-            className="absolute top-1/3 right-1/4"
-            initial={{ y: 0, scale: 1 }}
-            animate={tokenAnimation}
-            transition={{ delay: 0.5 }}
-            {...optimizedAnimationProps}
-          >
-            <div className="w-14 h-14 relative">
-              <div className="absolute inset-0 bg-orange-500/30 backdrop-blur-md rounded-full shadow-glow-orange-sm transform-gpu" />
-              <div className="absolute inset-[15%] bg-orange-400/40 backdrop-blur-md rounded-full shadow-glow-orange-sm transform-gpu" />
-              <div className="absolute inset-[30%] bg-orange-300/50 backdrop-blur-md rounded-full shadow-glow-orange-sm transform-gpu" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-white font-bold text-lg">BTC</span>
-              </div>
-            </div>
-          </motion.div>
-          
-          {/* Token USDT */}
-          <motion.div 
-            className="absolute bottom-1/3 left-1/3"
-            initial={{ y: 0, scale: 1 }}
-            animate={{ y: [-5, 15, -5], rotateY: [0, 120, 240, 360], rotateX: [5, -15, 5], scale: [1, 1.03, 1] }}
-            transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          >
-            <div className="w-12 h-12 relative">
-              <div className="absolute inset-0 bg-green-500/30 backdrop-blur-md rounded-full shadow-glow-green-sm transform-gpu" />
-              <div className="absolute inset-[15%] bg-green-400/40 backdrop-blur-md rounded-full shadow-glow-green-sm transform-gpu" />
-              <div className="absolute inset-[30%] bg-green-300/50 backdrop-blur-md rounded-full shadow-glow-green-sm transform-gpu" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">USDT</span>
-              </div>
-            </div>
-          </motion.div>
-          
-          {/* Token LINK */}
-          <motion.div 
-            className="absolute top-2/3 right-1/5"
-            initial={{ y: 0, scale: 1 }}
-            animate={{ y: [8, -12, 8], rotateY: [0, -240, -360], rotateX: [15, -5, 15], scale: [1, 1.06, 1] }}
-            transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-          >
-            <div className="w-10 h-10 relative">
-              <div className="absolute inset-0 bg-blue-600/30 backdrop-blur-md rounded-full shadow-glow-blue-sm transform-gpu" />
-              <div className="absolute inset-[15%] bg-blue-500/40 backdrop-blur-md rounded-full shadow-glow-blue-sm transform-gpu" />
-              <div className="absolute inset-[30%] bg-blue-400/50 backdrop-blur-md rounded-full shadow-glow-blue-sm transform-gpu" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-white font-bold text-xs">LINK</span>
-              </div>
-            </div>
-          </motion.div>
-          
-          {/* Token UNI */}
-          <motion.div 
-            className="absolute bottom-1/4 right-1/3"
-            initial={{ y: 0, scale: 1 }}
-            animate={{ y: [-8, 12, -8], rotateY: [0, 210, 360], rotateX: [-15, 5, -15], scale: [1, 1.04, 1] }}
-            transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          >
-            <div className="w-12 h-12 relative">
-              <div className="absolute inset-0 bg-pink-500/30 backdrop-blur-md rounded-full shadow-glow-pink-sm transform-gpu" />
-              <div className="absolute inset-[15%] bg-pink-400/40 backdrop-blur-md rounded-full shadow-glow-pink-sm transform-gpu" />
-              <div className="absolute inset-[30%] bg-pink-300/50 backdrop-blur-md rounded-full shadow-glow-pink-sm transform-gpu" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">UNI</span>
-              </div>
-            </div>
-          </motion.div>
-          
-          {/* Token AAVE */}
-          <motion.div 
-            className="absolute top-1/2 left-1/6"
-            initial={{ y: 0, scale: 1 }}
-            animate={tokenAnimation}
-            transition={{ delay: 2.5 }}
-            {...optimizedAnimationProps}
-          >
-            <div className="w-11 h-11 relative">
-              <div className="absolute inset-0 bg-purple-500/30 backdrop-blur-md rounded-full shadow-glow-purple-sm transform-gpu" />
-              <div className="absolute inset-[15%] bg-purple-400/40 backdrop-blur-md rounded-full shadow-glow-purple-sm transform-gpu" />
-              <div className="absolute inset-[30%] bg-purple-300/50 backdrop-blur-md rounded-full shadow-glow-purple-sm transform-gpu" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-white font-bold text-xs">AAVE</span>
-              </div>
-            </div>
-          </motion.div>
-          
-          {/* Token MATIC - optimisé */}
-          <motion.div 
-            className="absolute top-1/6 right-1/6"
-            initial={{ y: 0, scale: 1 }}
-            animate={tokenAnimation}
-            transition={{ delay: 0.7 }}
-            {...optimizedAnimationProps}
-          >
-            <div className="w-13 h-13 relative">
-              <div className="absolute inset-0 bg-purple-600/30 backdrop-blur-md rounded-full shadow-glow-purple-sm transform-gpu" />
-              <div className="absolute inset-[15%] bg-purple-500/40 backdrop-blur-md rounded-full shadow-glow-purple-sm transform-gpu" />
-              <div className="absolute inset-[30%] bg-purple-400/50 backdrop-blur-md rounded-full shadow-glow-purple-sm transform-gpu" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">MATIC</span>
-              </div>
-            </div>
-          </motion.div>
-          
-          {/* Token DAI - optimisé */}
-          <motion.div 
-            className="absolute bottom-1/6 left-1/4"
-            initial={{ y: 0, scale: 1 }}
-            animate={tokenAnimation}
-            transition={{ delay: 1.2 }}
-            {...optimizedAnimationProps}
-          >
-            <div className="w-10 h-10 relative">
-              <div className="absolute inset-0 bg-yellow-500/30 backdrop-blur-md rounded-full shadow-glow-orange-sm transform-gpu" />
-              <div className="absolute inset-[15%] bg-yellow-400/40 backdrop-blur-md rounded-full shadow-glow-orange-sm transform-gpu" />
-              <div className="absolute inset-[30%] bg-yellow-300/50 backdrop-blur-md rounded-full shadow-glow-orange-sm transform-gpu" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-white font-bold text-xs">DAI</span>
-              </div>
-            </div>
-          </motion.div>
-          
-          {/* Token COMP */}
-          <motion.div 
-            className="absolute top-3/5 left-2/5"
-            initial={{ y: 0, scale: 1 }}
-            animate={{ y: [-7, 13, -7], rotateY: [0, 90, 180, 270, 360], rotateX: [0, 10, 0, -10, 0], scale: [1, 1.06, 1] }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-          >
-            <div className="w-9 h-9 relative">
-              <div className="absolute inset-0 bg-green-600/30 backdrop-blur-md rounded-full shadow-glow-green-sm transform-gpu" />
-              <div className="absolute inset-[15%] bg-green-500/40 backdrop-blur-md rounded-full shadow-glow-green-sm transform-gpu" />
-              <div className="absolute inset-[30%] bg-green-400/50 backdrop-blur-md rounded-full shadow-glow-green-sm transform-gpu" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-white font-bold text-xs">COMP</span>
-              </div>
-            </div>
-          </motion.div>
-          
-          {/* Token SOL */}
-          <motion.div 
-            className="absolute bottom-2/5 right-2/5"
-            initial={{ y: 0, scale: 1 }}
-            animate={{ y: [9, -11, 9], rotateY: [0, -90, -180, -270, -360], rotateX: [0, -10, 0, 10, 0], scale: [1, 1.04, 1] }}
-            transition={{ duration: 9.2, repeat: Infinity, ease: "easeInOut", delay: 1.8 }}
-          >
-            <div className="w-11 h-11 relative">
-              <div className="absolute inset-0 bg-purple-400/30 backdrop-blur-md rounded-full shadow-glow-purple-sm transform-gpu" />
-              <div className="absolute inset-[15%] bg-purple-300/40 backdrop-blur-md rounded-full shadow-glow-purple-sm transform-gpu" />
-              <div className="absolute inset-[30%] bg-purple-200/50 backdrop-blur-md rounded-full shadow-glow-purple-sm transform-gpu" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">SOL</span>
-              </div>
-            </div>
-          </motion.div>
-          
-          {/* Lignes de connexion entre tokens */}
-          <svg className="absolute inset-0 w-full h-full z-0 opacity-30" xmlns="http://www.w3.org/2000/svg">
-            <line x1="20%" y1="25%" x2="33%" y2="33%" stroke="#4F46E5" strokeWidth="1" strokeDasharray="5,5" />
-            <line x1="33%" y1="33%" x2="20%" y2="50%" stroke="#4F46E5" strokeWidth="1" strokeDasharray="5,5" />
-            <line x1="33%" y1="33%" x2="40%" y2="60%" stroke="#4F46E5" strokeWidth="1" strokeDasharray="5,5" />
-            <line x1="33%" y1="33%" x2="60%" y2="40%" stroke="#4F46E5" strokeWidth="1" strokeDasharray="5,5" />
-            <line x1="60%" y1="40%" x2="75%" y2="20%" stroke="#4F46E5" strokeWidth="1" strokeDasharray="5,5" />
-            <line x1="60%" y1="40%" x2="80%" y2="67%" stroke="#4F46E5" strokeWidth="1" strokeDasharray="5,5" />
-            <line x1="40%" y1="60%" x2="25%" y2="83%" stroke="#4F46E5" strokeWidth="1" strokeDasharray="5,5" />
-            <line x1="40%" y1="60%" x2="67%" y2="75%" stroke="#4F46E5" strokeWidth="1" strokeDasharray="5,5" />
+          {/* Lignes de connexion */}
+          <div className="absolute top-[15%] left-[20%] w-[60%] h-[0.5px] bg-gradient-to-r from-neon-green to-transparent transform rotate-12 origin-left animate-pulse-slow"></div>
+          <div className="absolute top-[65%] left-[15%] w-[60%] h-[0.5px] bg-gradient-to-r from-blue-400 to-transparent transform -rotate-6 origin-left animate-pulse-slow" style={{animationDelay: '0.7s'}}></div>
+          <div className="absolute top-[35%] left-[20%] w-[60%] h-[0.5px] bg-gradient-to-r from-purple-400 to-transparent transform rotate-[25deg] origin-left animate-pulse-slow" style={{animationDelay: '1.3s'}}></div>
+          <div className="absolute top-[25%] left-[50%] w-[30%] h-[0.5px] bg-gradient-to-r from-blue-400 to-transparent transform -rotate-45 origin-left animate-pulse-slow" style={{animationDelay: '1.7s'}}></div>
+          <div className="absolute top-[50%] left-[30%] w-[45%] h-[0.5px] bg-gradient-to-r from-purple-400 to-transparent transform rotate-[5deg] origin-left animate-pulse-slow" style={{animationDelay: '0.5s'}}></div>
+        </div>
+        
+        {/* Particules et étoiles améliorées */}
+        <div className="absolute inset-0 z-10">
+          <div className="absolute top-1/4 right-1/4 w-1 h-1 bg-white rounded-full animate-pulse-slow shadow-glow-sm"></div>
+          <div className="absolute top-3/4 left-1/3 w-1.5 h-1.5 bg-white rounded-full animate-pulse-slow shadow-glow-sm" style={{animationDelay: '1.5s'}}></div>
+          <div className="absolute top-1/2 right-1/5 w-1 h-1 bg-white rounded-full animate-pulse-slow shadow-glow-sm" style={{animationDelay: '0.8s'}}></div>
+          <div className="absolute bottom-1/4 left-1/4 w-2 h-2 bg-white rounded-full animate-pulse-slow shadow-glow-sm" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white rounded-full animate-pulse-slow shadow-glow-sm" style={{animationDelay: '1.2s'}}></div>
+          <div className="absolute bottom-1/3 left-1/5 w-1.5 h-1.5 bg-white rounded-full animate-pulse-slow shadow-glow-sm" style={{animationDelay: '0.7s'}}></div>
+          <div className="absolute top-2/3 right-1/6 w-1 h-1 bg-white rounded-full animate-pulse-slow shadow-glow-sm" style={{animationDelay: '1.9s'}}></div>
+          <div className="absolute bottom-2/3 left-1/6 w-1 h-1 bg-white rounded-full animate-pulse-slow shadow-glow-sm" style={{animationDelay: '1.1s'}}></div>
+        </div>
+        
+        {/* Icônes blockchain flottantes améliorées */}
+        <div className="absolute top-10 sm:top-16 md:top-20 right-6 sm:right-12 md:right-20 opacity-30 animate-float-slow z-10 hover:opacity-60 transition-opacity duration-500 cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-14 w-14 sm:h-18 sm:w-18 md:h-24 md:w-24 text-neon-green drop-shadow-glow-green" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
+          </svg>
+        </div>
+        <div className="absolute bottom-10 sm:bottom-16 md:bottom-20 left-6 sm:left-12 md:left-20 opacity-20 animate-float-slow z-10 hover:opacity-50 transition-opacity duration-500 cursor-pointer" style={{animationDelay: '1.2s'}}>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 text-blue-400 drop-shadow-glow-blue" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clipRule="evenodd" />
+          </svg>
+        </div>
+        <div className="absolute top-[40%] right-[8%] sm:right-[12%] md:right-[15%] opacity-15 animate-float-slow z-10 hover:opacity-40 transition-opacity duration-500 cursor-pointer hidden sm:block" style={{animationDelay: '0.8s'}}>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16 text-purple-400 drop-shadow-glow-purple" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z" />
+            <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z" />
+            <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z" />
           </svg>
         </div>
         
-        {/* Contenu */}
-        <div className="container mx-auto px-4 relative z-20">
-          <div className="max-w-5xl mx-auto">
-            <Link href="/#projects">
-              <a className="inline-flex items-center text-white/80 hover:text-neon-green mb-6 transition-colors">
-                <motion.span
-                  whileHover={{ x: -5 }}
-                  className="inline-flex items-center"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                  </svg>
-                  Retour aux projets
-                </motion.span>
-              </a>
-            </Link>
+        {/* Contenu principal */}
+        <div className="relative z-10 max-w-5xl px-6 py-16 text-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center relative"
+          >
+            {/* Effet de lueur derrière le titre */}
+            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-[120%] h-40 bg-gradient-to-r from-blue-500/10 via-purple-500/20 to-neon-green/10 blur-3xl rounded-full"></div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="relative rounded-2xl overflow-hidden shadow-glow-blue mb-6 lg:mb-0"
-                >
-                  <div className="aspect-[4/3] relative bg-gradient-to-br from-dark-blue to-space-gray p-6 flex items-center justify-center">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-full h-full max-w-[300px] max-h-[300px] relative">
-                        {/* Cercles concentriques animés */}
-                        <div className="absolute inset-0 border-2 border-blue-500/30 rounded-full animate-ping-slow"></div>
-                        <div className="absolute inset-[10%] border-2 border-purple-500/30 rounded-full animate-ping-slow" style={{animationDelay: '0.5s'}}></div>
-                        <div className="absolute inset-[20%] border-2 border-neon-green/30 rounded-full animate-ping-slow" style={{animationDelay: '1s'}}></div>
-                        
-                        {/* Logo central */}
-                        <div className="absolute inset-[30%] bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
-                          <span className="text-4xl font-bold text-white">FL</span>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Lignes de code simulées */}
-                    <div className="absolute bottom-4 left-4 right-4 bg-space-gray/80 backdrop-blur-sm p-3 rounded-lg border border-gray-700/50 overflow-hidden">
-                      <div className="text-xs text-gray-300 font-mono">
-                        <div><span className="text-blue-400">async</span> <span className="text-neon-green">function</span> <span className="text-yellow-400">executeArbitrage</span>() &#123;</div>
-                        <div className="pl-4"><span className="text-purple-400">const</span> opportunity = <span className="text-yellow-400">await</span> scanner.<span className="text-blue-400">findBestOpportunity</span>();</div>
-                        <div className="pl-4"><span className="text-purple-400">return</span> flashLoan.<span className="text-blue-400">execute</span>(opportunity);</div>
-                        <div>&#125;</div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
+            {/* Titre avec animation de texte */}
+            <motion.h1 
+              className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight relative"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <span className="relative inline-block">
+                <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-white to-neon-green">Bot Flash Loan</span>
+                <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-neon-green rounded-full opacity-70"></span>
+              </span>
+              <span className="relative inline-block mt-2 md:mt-0 md:ml-2">
+                <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-white to-blue-400">Multi-DEX</span>
+                <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full opacity-70"></span>
+              </span>
               
-              <div>
-                <motion.h1 
-                  initial={{ y: 30, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.6 }}
-                  className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-neon-green mb-4"
-                >
-                  {projectData.title}
-                </motion.h1>
+              {/* Particules autour du titre */}
+              <div className="absolute -top-4 -left-4 w-3 h-3 bg-neon-green rounded-full opacity-70 animate-ping-slow hidden md:block"></div>
+              <div className="absolute -bottom-4 -right-4 w-3 h-3 bg-blue-400 rounded-full opacity-70 animate-ping-slow hidden md:block" style={{animationDelay: '1.2s'}}></div>
+            </motion.h1>
+            
+            {/* Description avec animation de fade-in */}
+            <motion.p 
+              className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 md:mb-10 max-w-3xl mx-auto relative px-4 sm:px-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <span className="relative">
+                Un bot d'arbitrage avancé exploitant les opportunités de flash loan sur plusieurs DEX et blockchains simultanément.
+                <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-50 animate-expand-line"></span>
+              </span>
+            </motion.p>
+            
+            {/* Badges avec animations */}
+            <motion.div 
+              className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 mt-8 sm:mt-10 md:mt-12 px-2"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <motion.div 
+                className="flex items-center gap-1 sm:gap-2 bg-gradient-to-r from-blue-900/30 to-blue-800/40 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-blue-500/30 backdrop-blur-sm shadow-glow-blue-xs hover:shadow-glow-blue-sm transition-all duration-300 cursor-pointer group text-sm sm:text-base"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <span className="text-gray-200 font-medium group-hover:text-white transition-colors duration-300">7 blockchains</span>
+              </motion.div>
+              
+              <motion.div 
+                className="flex items-center gap-1 sm:gap-2 bg-gradient-to-r from-purple-900/30 to-purple-800/40 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-purple-500/30 backdrop-blur-sm shadow-glow-purple-xs hover:shadow-glow-purple-sm transition-all duration-300 cursor-pointer group text-sm sm:text-base"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ delay: 0.1 }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-purple-400 group-hover:text-purple-300 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="text-gray-200 font-medium group-hover:text-white transition-colors duration-300">ROI: 629,22%</span>
+              </motion.div>
+              
+              <motion.div 
+                className="flex items-center gap-1 sm:gap-2 bg-gradient-to-r from-green-900/30 to-green-800/40 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-green-500/30 backdrop-blur-sm shadow-glow-green-xs hover:shadow-glow-green-sm transition-all duration-300 cursor-pointer group text-sm sm:text-base"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ delay: 0.2 }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 text-green-400 group-hover:text-green-300 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                <span className="text-gray-200 font-medium group-hover:text-white transition-colors duration-300">Sécurité avancée</span>
+              </motion.div>
+            </motion.div>
+            
+            {/* Bouton avec animation */}
+            <motion.div 
+              className="mt-10 sm:mt-12 md:mt-16"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <motion.button 
+                onClick={() => document.getElementById('overview').scrollIntoView({ behavior: 'smooth' })}
+                className="relative bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-1.5 sm:gap-2 mx-auto overflow-hidden group text-sm sm:text-base"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {/* Effet de particules sur le bouton */}
+                <span className="absolute inset-0 w-full h-full">
+                  <span className="absolute top-1/4 left-1/4 w-1 h-1 bg-white rounded-full opacity-70 animate-ping-slow hidden sm:block"></span>
+                  <span className="absolute bottom-1/4 right-1/3 w-1 h-1 bg-white rounded-full opacity-70 animate-ping-slow hidden sm:block" style={{animationDelay: '0.5s'}}></span>
+                </span>
                 
-                <motion.p
-                  initial={{ y: 30, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="text-xl text-white/90 mb-6"
-                >
-                  {projectData.description}
-                </motion.p>
+                {/* Effet de lueur sur le bouton */}
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-400/0 via-white/20 to-purple-400/0 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>
                 
-                <motion.div 
-                  initial={{ y: 30, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  className="flex flex-wrap gap-4"
-                >
-                  <div className="flex items-center bg-blue-900/30 backdrop-blur-sm px-4 py-2 rounded-full border border-blue-500/30">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                    <span className="text-gray-300">7 blockchains</span>
-                  </div>
-                  
-                  <div className="flex items-center bg-purple-900/30 backdrop-blur-sm px-4 py-2 rounded-full border border-purple-500/30">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2m0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                    <span className="text-gray-300">ROI: {projectData.results.backtest.roi}</span>
-                  </div>
-                  
-                  <div className="flex items-center bg-green-900/30 backdrop-blur-sm px-4 py-2 rounded-full border border-green-500/30">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-neon-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                    <span className="text-gray-300">Sécurité avancée</span>
-                  </div>
-                </motion.div>
-              </div>
-            </div>
-          </div>
+                <span className="relative z-10">Découvrir le projet</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 relative z-10 group-hover:translate-y-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </motion.button>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
+      {/* Fin du Hero section */}
 
       {/* Navigation par onglets - Design amélioré */}
-      <section className="sticky top-0 z-30 bg-gradient-to-r from-space-gray/90 to-dark-blue/90 backdrop-blur-lg border-b border-blue-900/30 shadow-xl">
+      <section id="overview" className="sticky top-0 z-30 bg-gradient-to-r from-space-gray/90 to-dark-blue/90 backdrop-blur-lg border-b border-blue-900/30 shadow-xl">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="flex overflow-x-auto hide-scrollbar py-4 gap-3 md:gap-8 md:justify-center">
@@ -550,7 +445,7 @@ const FlashLoanBotProject = () => {
               >
                 <span className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m0 0V9a2 2 0 012-2h2a2 2 0 012 2v3m0 0V5a2 2 0 012-2h2a2 2 0 012 2v2M7 7h10" />
                   </svg>
                   Architecture
                 </span>
@@ -596,8 +491,8 @@ const FlashLoanBotProject = () => {
       <section className="py-16 bg-gradient-to-b from-deep-black to-dark-blue/90 min-h-[60vh]">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            {activeTab === 'overview' && (
-              <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait">
+              {activeTab === 'overview' && (
                 <motion.div
                   key="overview-tab"
                   {...pageTransition}
@@ -639,9 +534,8 @@ const FlashLoanBotProject = () => {
                   </div>
                 </motion.div>
               </motion.div>
-              </AnimatePresence>
-            )}
-
+              )}
+            </AnimatePresence>
             {activeTab === 'features' && (
               <AnimatePresence mode="wait">
                 <motion.div
@@ -887,7 +781,7 @@ const FlashLoanBotProject = () => {
                     {projectData.stack.map((tech, index) => (
                       <motion.div 
                         key={index} 
-                        className="glass-effect p-4 rounded-lg border border-blue-500/10 w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)]"
+                        className="glass-effect p-4 rounded-lg border border-blue-500/10 w-full sm:w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)] min-w-0"
                         whileHover={{ scale: 1.02, boxShadow: '0 0 15px rgba(0, 255, 157, 0.3)' }}
                         transition={{ duration: 0.2 }}
                       >
@@ -907,22 +801,21 @@ const FlashLoanBotProject = () => {
           </div>
         </div>
       </section>
-      
+
       {/* CTA - Design amélioré */}
       <section className="py-16 bg-gradient-to-r from-dark-blue to-tech-blue relative overflow-hidden">
         {/* Particules d'arrière-plan */}
         <div className="absolute top-10 left-10 w-3 h-3 rounded-full bg-neon-green/50 animate-float"></div>
         <div className="absolute top-3/4 right-1/4 w-2 h-2 rounded-full bg-blue-400/50 animate-float" style={{animationDelay: '1s'}}></div>
         <div className="absolute bottom-10 right-10 w-4 h-4 rounded-full bg-purple-400/50 animate-float" style={{animationDelay: '2s'}}></div>
-        
         {/* Effet de lueur */}
         <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-neon-green/10 blur-[100px] rounded-full"></div>
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Intéressé par ce type de projets ?</h2>
-          <p className="text-white/80 max-w-2xl mx-auto mb-8">
+        <div className="container mx-auto px-4 text-center max-w-full">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-6 leading-tight">Intéressé par ce type de projets ?</h2>
+          <p className="text-white/80 max-w-2xl mx-auto mb-8 text-base sm:text-lg">
             Je développe des solutions de trading algorithmique et d'arbitrage crypto sur mesure. Discutons de votre projet et des possibilités d'implémentation.
           </p>
-          <Link href="/#contact">
+          <Link href="/#contact" passHref legacyBehavior>
             <motion.a
               whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(0, 255, 157, 0.5)' }}
               whileTap={{ scale: 0.95 }}
@@ -938,6 +831,6 @@ const FlashLoanBotProject = () => {
       </section>
     </motion.div>
   );
-};
+}
 
 export default FlashLoanBotProject;

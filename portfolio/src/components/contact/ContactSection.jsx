@@ -86,10 +86,10 @@ const ContactSection = () => {
 
   // Réseaux sociaux
   const socialLinks = [
-    { name: 'LinkedIn', icon: '/icons/linkedin.svg', url: '#', color: 'bg-blue-600' },
+    { name: 'LinkedIn', icon: '/icons/linkedin.svg', url: 'https://www.linkedin.com/in/mikael-leclerc-822536344/', color: 'bg-blue-600' },
     { name: 'GitHub', icon: '/icons/github.svg', url: '#', color: 'bg-gray-800' },
     { name: 'Twitter', icon: '/icons/twitter.svg', url: '#', color: 'bg-sky-500' },
-    { name: 'Email', icon: '/icons/email.svg', url: 'mailto:contact@example.com', color: 'bg-red-500' }
+    { name: 'Email', icon: '/icons/email.svg', url: 'mailto:mikaleclerc5@gmail.com', color: 'bg-red-500' }
   ];
 
   return (
@@ -307,7 +307,7 @@ const ContactSection = () => {
                         </svg>
                       </div>
                       <div>
-                        <h4 className="text-lg font-medium text-white mb-1">Email</h4>
+                        <h4 className="text-lg font-medium text-white mb-1">{t('contact.email')}</h4>
                         <a 
                           href="mikaleclerc5@gmail.com" 
                           className="text-gray-300 hover:text-tech-blue transition-colors flex items-center group"
@@ -330,7 +330,7 @@ const ContactSection = () => {
                         </svg>
                       </div>
                       <div>
-                        <h4 className="text-lg font-medium text-white mb-1">Téléphone</h4>
+                        <h4 className="text-lg font-medium text-white mb-1">{t('contact.phone')}</h4>
                         <a 
                           href="tel:+33769812391" 
                           className="text-gray-300 hover:text-purple-500 transition-colors flex items-center group"
@@ -354,7 +354,7 @@ const ContactSection = () => {
                         </svg>
                       </div>
                       <div>
-                        <h4 className="text-lg font-medium text-white mb-1">Localisation</h4>
+                        <h4 className="text-lg font-medium text-white mb-1">{t('contact.location')}</h4>
                         <p className="text-gray-300 flex items-center group">
                           Paris, France
                           <span className="inline-block ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -381,7 +381,7 @@ const ContactSection = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-bold text-white">Réseaux sociaux</h3>
+                    <h3 className="text-2xl font-bold text-white">{t('contact.socialMedia')}</h3>
                   </div>
                   
                   <div className="grid grid-cols-2 gap-4">
@@ -418,10 +418,10 @@ const ContactSection = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-bold text-white">Prendre rendez-vous</h3>
+                    <h3 className="text-2xl font-bold text-white">{t('contact.schedule')}</h3>
                   </div>
                   
-                  <p className="text-gray-300 mb-6 ml-14">Préférez-vous planifier un appel ? Réservez un créneau directement dans mon agenda.</p>
+                  <p className="text-gray-300 mb-6 ml-14">{t('contact.scheduleDescription')}</p>
                   
                   <motion.a
                     href="#"
@@ -432,7 +432,7 @@ const ContactSection = () => {
                     className="ml-14 inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-tech-blue text-white font-medium rounded-lg transition-all duration-300"
                   >
                     <span className="flex items-center">
-                      Réserver un appel
+                      {t('contact.scheduleButton')}
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>

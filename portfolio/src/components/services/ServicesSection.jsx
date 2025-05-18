@@ -67,7 +67,7 @@ const ServicesSection = () => {
       id: 'training',
       title: t('services.training.title'),
       description: t('services.training.description'),
-      icon: '📊',
+      icon: '🖥️',
       color: 'from-red-500 to-pink-500',
       features: [
         t('services.training.features.0'),

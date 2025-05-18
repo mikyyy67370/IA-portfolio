@@ -341,7 +341,9 @@ const fr = {
       description: "Analyse et optimisation de vos systèmes existants pour améliorer l'efficacité.",
       features: {
         0: "Optimisation du code et des algorithmes",
-        1: "Recommandations détaillées"
+        1: "Recommandations détaillées",
+        2: "Audit de performance et de sécurité",
+        3: "Stratégies d'évolution technique"
       }
     },
     automation: {
@@ -355,13 +357,13 @@ const fr = {
       }
     },
     training: {
-      title: "Formation & consulting",
-      description: "Accompagnement personnalisé pour vous aider à maîtriser les technologies d'IA et d'automatisation.",
+      title: "Site Web Sur-mesure UI/UX",
+      description: "Création de sites web modernes et responsifs avec une expérience utilisateur optimale et un design sur mesure.",
       features: {
-        0: "Formation sur mesure pour vos équipes",
-        1: "Consulting stratégique sur l'IA et l'automatisation",
-        2: "Accompagnement dans la mise en œuvre",
-        3: "Veille technologique et recommandations"
+        0: "Design UI/UX personnalisé et moderne",
+        1: "Expérience utilisateur intuitive et optimisée",
+        2: "Sites web entièrement responsifs",
+        3: "Intégration de fonctionnalités avancées"
       }
     },
     cta: {
@@ -383,6 +385,13 @@ const fr = {
     send: "Envoyer",
     success: "Message envoyé avec succès !",
     error: "Une erreur est survenue. Veuillez réessayer.",
+    contactInfo: "Informations de contact",
+    socialMedia: "Réseaux sociaux",
+    schedule: "Prendre rendez-vous",
+    scheduleDescription: "Préférez-vous planifier un appel ? Réservez un créneau directement dans mon agenda.",
+    scheduleButton: "Réserver un appel",
+    phone: "Téléphone",
+    location: "Localisation",
   },
   
   // Language Selector

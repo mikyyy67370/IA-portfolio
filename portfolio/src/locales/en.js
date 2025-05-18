@@ -339,7 +339,9 @@ const en = {
       description: "Analysis and optimization of your existing systems to improve efficiency.",
       features: {
         0: "Code and algorithm optimization",
-        1: "Detailed recommendations"
+        1: "Detailed recommendations",
+        2: "Performance and security audit",
+        3: "Technical strategy and roadmap"
       }
     },
     automation: {
@@ -353,13 +355,13 @@ const en = {
       }
     },
     training: {
-      title: "Training & Consulting",
-      description: "Personalized support to help you master AI and automation technologies.",
+      title: "Custom UI/UX Website",
+      description: "Creation of modern and responsive websites with optimal user experience and custom design.",
       features: {
-        0: "Tailored training for your teams",
-        1: "Strategic consulting on AI and automation",
-        2: "Support in implementation",
-        3: "Technology watch and recommendations"
+        0: "Custom and modern UI/UX design",
+        1: "Intuitive and optimized user experience",
+        2: "Fully responsive websites",
+        3: "Integration of advanced features"
       }
     },
     cta: {
@@ -381,6 +383,13 @@ const en = {
     send: "Send",
     success: "Message sent successfully!",
     error: "An error occurred. Please try again.",
+    contactInfo: "Contact Information",
+    socialMedia: "Social Media",
+    schedule: "Schedule a Call",
+    scheduleDescription: "Would you prefer to schedule a call? Book a time slot directly in my calendar.",
+    scheduleButton: "Book a Call",
+    phone: "Phone",
+    location: "Location",
   },
   
   // Language Selector

@@ -386,13 +386,13 @@ const de = {
       }
     },
     training: {
-      title: "Schulung & Beratung",
-      description: "Individuelle Unterstützung, um Ihnen zu helfen, KI- und Automatisierungstechnologien zu beherrschen.",
+      title: "Maßgeschneiderte UI/UX-Website",
+      description: "Erstellung moderner und responsiver Websites mit optimaler Benutzererfahrung und individuellem Design.",
       features: {
-        0: "Maßgeschneiderte Schulungen für Ihre Teams",
-        1: "Strategische Beratung zu KI und Automatisierung",
-        2: "Unterstützung bei der Umsetzung",
-        3: "Technologiebeobachtung und Empfehlungen"
+        0: "Individuelles und modernes UI/UX-Design",
+        1: "Intuitive und optimierte Benutzererfahrung",
+        2: "Vollständig responsive Websites",
+        3: "Integration fortschrittlicher Funktionen"
       }
     },
     botCreation: {
@@ -424,6 +424,13 @@ const de = {
     send: "Senden",
     success: "Nachricht erfolgreich gesendet!",
     error: "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+    contactInfo: "Kontaktinformationen",
+    socialMedia: "Soziale Medien",
+    schedule: "Termin vereinbaren",
+    scheduleDescription: "Möchten Sie lieber einen Anruf planen? Buchen Sie direkt einen Termin in meinem Kalender.",
+    scheduleButton: "Anruf buchen",
+    phone: "Telefon",
+    location: "Standort",
   },
   
   // Language Selector

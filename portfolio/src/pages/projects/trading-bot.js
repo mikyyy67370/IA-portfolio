@@ -721,7 +721,7 @@ const TradingBotProject = () => {
                     {projectData.stack.map((tech, index) => (
                       <motion.div 
                         key={index} 
-                        className="glass-effect p-4 rounded-lg border border-green-500/10 w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)]"
+                        className="glass-effect p-4 rounded-lg border border-green-500/10 w-full sm:w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)] min-w-0"
                         whileHover={{ scale: 1.02, boxShadow: '0 0 15px rgba(0, 255, 157, 0.3)' }}
                         transition={{ duration: 0.2 }}
                       >
@@ -752,9 +752,9 @@ const TradingBotProject = () => {
         
         {/* Effet de lueur */}
         <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-neon-green/10 blur-[100px] rounded-full"></div>
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Intéressé par ce type de projets ?</h2>
-          <p className="text-white/80 max-w-2xl mx-auto mb-8">
+        <div className="container mx-auto px-4 text-center max-w-full">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-6 leading-tight">Intéressé par ce type de projets ?</h2>
+          <p className="text-white/80 max-w-2xl mx-auto mb-8 text-base sm:text-lg">
             Je développe des solutions de trading algorithmique et d'intelligence artificielle sur mesure. Discutons de votre projet et des possibilités d'implémentation.
           </p>
           <Link href="/#contact">
